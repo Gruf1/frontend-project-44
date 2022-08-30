@@ -9,8 +9,14 @@
 
 [![asciicast](https://asciinema.org/a/dQ5BfWmCTQNEmBaYd8oyPxGXa.svg)](https://asciinema.org/a/dQ5BfWmCTQNEmBaYd8oyPxGXa)
 
-## Игра: "Проверка на четность"
+## Игра: "Калькулятор"
 ### Описание игры:
 Пользователю показывается случайное математическое выражение, например 35 + 16, которое нужно вычислить и записать правильный ответ.
 ### Запуск игры: __"brain-calc"__
 [![asciicast](https://asciinema.org/a/rW1J4iRQ1vlvhhWsYGDvC2Jqn.svg)](https://asciinema.org/a/rW1J4iRQ1vlvhhWsYGDvC2Jqn)
+
+## Игра: Игра "НОД"
+### Описание игры:
+Пользователю показывается два случайных числа, например, 25 50. Пользователь должен вычислить и ввести наибольший общий делитель этих чисел.
+### Запуск игры: __"brain-gcd"__
+[![asciicast](https://asciinema.org/a/qPzGmRrBRLa2M1EQok53ErBwx.svg)](https://asciinema.org/a/qPzGmRrBRLa2M1EQok53ErBwx)
