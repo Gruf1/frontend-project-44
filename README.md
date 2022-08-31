@@ -20,3 +20,9 @@
 Пользователю показывается два случайных числа, например, 25 50. Пользователь должен вычислить и ввести наибольший общий делитель этих чисел.
 ### Запуск игры: __"brain-gcd"__
 [![asciicast](https://asciinema.org/a/qPzGmRrBRLa2M1EQok53ErBwx.svg)](https://asciinema.org/a/qPzGmRrBRLa2M1EQok53ErBwx)
+
+## Игра: "Арифметическая прогрессия"
+### Описание игры:
+Пользователю показывается ряд чисел, образующий арифметическую прогрессию, заменив любое из чисел двумя точками. Игрок должен определить это число.
+### Запуск игры: __"brain-progression"__
+[![asciicast](https://asciinema.org/a/GdDv5tAweVFOho3yeYAb9n9ts.svg)](https://asciinema.org/a/GdDv5tAweVFOho3yeYAb9n9ts)
