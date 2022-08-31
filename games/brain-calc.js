@@ -10,7 +10,7 @@ const getAnswerQuestion = () => {
   const firstRandomNumber = getRandomNumber();
   const secondRandomNumber = getRandomNumber();
   const randomOperator = getRandomOperator(operators);
-  const question = (`${firstRandomNumber}${randomOperator}${secondRandomNumber}`);
+  const question = (`${firstRandomNumber} ${randomOperator} ${secondRandomNumber}`);
   let correctAnswer;
   switch (randomOperator) {
     case '+':
