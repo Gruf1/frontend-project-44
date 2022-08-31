@@ -26,3 +26,9 @@
 Пользователю показывается ряд чисел, образующий арифметическую прогрессию, заменив любое из чисел двумя точками. Игрок должен определить это число.
 ### Запуск игры: __"brain-progression"__
 [![asciicast](https://asciinema.org/a/GdDv5tAweVFOho3yeYAb9n9ts.svg)](https://asciinema.org/a/GdDv5tAweVFOho3yeYAb9n9ts)
+
+## Игра: "Простое ли число?"
+### Описание игры:
+Пользователю показывается случайное число. И ему нужно ответить yes, если число простое, или no — если не простое.
+### Запуск игры: __"brain-prime"__
+[![asciicast](https://asciinema.org/a/XVVuSlN0PEemlZ1XMKEdTnFxo.svg)](https://asciinema.org/a/XVVuSlN0PEemlZ1XMKEdTnFxo)
