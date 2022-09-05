@@ -1,12 +1,17 @@
-import getAnswer from './getAnswer.js';
+import readlineSync from 'readline-sync';
 
-export default (task, getAnswerQuestion) => {
+const getAnswer = (question) => {
+  const answer = readlineSync.question(question);
+  return answer;
+};
+
+export default (description, generateRound) => {
   console.log('Welcome to the Brain Games!');
   const playerName = getAnswer('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
-  console.log(task);
+  console.log(description);
   for (let i = 1; i <= 3; i += 1) {
-    const bothQuestionAnswer = getAnswerQuestion();
+    const bothQuestionAnswer = generateRound();
     console.log(`Question: ${bothQuestionAnswer[0]}`);
     const playerAnswer = getAnswer('Your answer: ');
     if (playerAnswer === bothQuestionAnswer[1]) {
