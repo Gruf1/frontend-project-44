@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import getRandomNumber from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 import run from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -17,7 +17,7 @@ const isPrime = (num) => {
 };
 
 const generateRound = () => {
-  const randomNumber = getRandomNumber(100);
+  const randomNumber = getRandomNumber(0, 100);
   const question = randomNumber;
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];

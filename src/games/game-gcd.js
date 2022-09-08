@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-import getRandomNumber from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 import run from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
-  const smallestNumber = firstNumber > secondNumber ? secondNumber : firstNumber;
+const getGreatestCommonDivisor = (x, y) => {
+  const smallestNumber = x > y ? y : x;
   for (let i = smallestNumber; i > 1; i -= 1) {
-    if (firstNumber % i === 0 && secondNumber % i === 0) {
+    if (x % i === 0 && y % i === 0) {
       return i;
     }
   }
@@ -15,11 +15,11 @@ const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
 };
 
 const generateRound = () => {
-  const firstNumber = getRandomNumber(10);
-  const secondNumber = getRandomNumber(10);
-  const question = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = getGreatestCommonDivisor(firstNumber, secondNumber).toString();
-  return [question, correctAnswer];
+  const number1 = getRandomNumber(1, 10);
+  const number2 = getRandomNumber(1, 10);
+  const question = `${number1} ${number2}`;
+  const correctAnswer = getGreatestCommonDivisor(number1, number2);
+  return [question, correctAnswer.toString()];
 };
 
 export default () => {

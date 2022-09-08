@@ -1,34 +1,35 @@
 #!/usr/bin/env node
-import getRandomNumber from '../utils.js';
+import { getRandomNumber, getRandomIndex } from '../utils.js';
 import run from '../index.js';
 
 const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
-const getRandomOperator = (arr) => {
-  const randIndex = Math.floor(Math.random() * arr.length);
-  return arr[randIndex];
-};
 
-const calculate = (firstNumber, secondNumber, operator) => {
+const calculate = (x, y, operator) => {
   switch (operator) {
     case '+':
-      return (firstNumber + secondNumber).toString();
+      return (x + y);
     case '-':
-      return (firstNumber - secondNumber).toString();
+      return (x - y);
     case '*':
-      return (firstNumber * secondNumber).toString();
+      return (x * y);
     default:
-      return 'there is no such operator';
+      throw new Error(`There is no such operator like '${operator}'!`);
   }
 };
 
+const getOperator = () => {
+  const randomIndex = getRandomIndex(operators);
+  return operators[randomIndex];
+};
+
 const generateRound = () => {
-  const firstRandomNumber = getRandomNumber();
-  const secondRandomNumber = getRandomNumber();
-  const randomOperator = getRandomOperator(operators);
-  const question = (`${firstRandomNumber} ${randomOperator} ${secondRandomNumber}`);
-  const correctAnswer = calculate(firstRandomNumber, secondRandomNumber, randomOperator);
-  return [question, correctAnswer];
+  const number1 = getRandomNumber(0, 50);
+  const number2 = getRandomNumber(0, 50);
+  const operator = getOperator();
+  const question = (`${number1} ${operator} ${number2}`);
+  const correctAnswer = calculate(number1, number2, operator);
+  return [question, correctAnswer.toString()];
 };
 
 export default () => {
