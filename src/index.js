@@ -7,6 +7,7 @@ export default (description, generateRound) => {
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
   console.log(description);
+
   for (let i = 1; i <= attemptsCount; i += 1) {
     const [question, correctAnswer] = generateRound();
     console.log(`Question: ${question}`);
@@ -18,5 +19,6 @@ export default (description, generateRound) => {
     }
     console.log('Correct!');
   }
+
   console.log(`Congratulations, ${playerName}!`);
 };

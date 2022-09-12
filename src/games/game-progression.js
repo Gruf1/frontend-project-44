@@ -3,25 +3,31 @@ import { getRandomNumber, getRandomIndex } from '../utils.js';
 import run from '../index.js';
 
 const description = 'What number is missing in the progression?';
-const progressionLength = getRandomNumber(5, 10);
+const minLength = 5;
+const maxLength = 10;
+const minRange = 1;
+const maxRange = 100;
+const minStep = 1;
+const maxStep = 10;
 
-const getProgression = () => {
-  const progressionArr = [];
-  const progressionBegin = getRandomNumber(1, 100);
-  const stepProgression = getRandomNumber(1, 10);
-  for (let i = progressionBegin; progressionArr.length < progressionLength; i += stepProgression) {
-    progressionArr.push(i);
+const buildProgression = (length, start, step) => {
+  const progression = [];
+  for (let i = start; progression.length < length; i += step) {
+    progression.push(i);
   }
-  return progressionArr;
+  return progression;
 };
 
 const generateRound = () => {
-  const progressionArr = getProgression();
-  const randomIndex = getRandomIndex(progressionArr);
-  const correctAnswer = progressionArr[randomIndex];
-  progressionArr[randomIndex] = '..';
-  const question = progressionArr.join(' ');
-  return [question, correctAnswer.toString()];
+  const length = getRandomNumber(minLength, maxLength);
+  const start = getRandomNumber(minRange, maxRange);
+  const step = getRandomNumber(minStep, maxStep);
+  const progression = buildProgression(length, start, step);
+  const indexForProgression = getRandomIndex(progression);
+  const correctAnswer = progression[indexForProgression].toString();
+  progression[indexForProgression] = '..';
+  const question = progression.join(' ');
+  return [question, correctAnswer];
 };
 
 export default () => {

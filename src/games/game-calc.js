@@ -4,6 +4,8 @@ import run from '../index.js';
 
 const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
+const minRange = 0;
+const maxRange = 50;
 
 const calculate = (x, y, operator) => {
   switch (operator) {
@@ -18,18 +20,13 @@ const calculate = (x, y, operator) => {
   }
 };
 
-const getOperator = () => {
-  const randomIndex = getRandomIndex(operators);
-  return operators[randomIndex];
-};
-
 const generateRound = () => {
-  const number1 = getRandomNumber(0, 50);
-  const number2 = getRandomNumber(0, 50);
-  const operator = getOperator();
+  const number1 = getRandomNumber(minRange, maxRange);
+  const number2 = getRandomNumber(minRange, maxRange);
+  const operator = operators[getRandomIndex(operators)];
   const question = (`${number1} ${operator} ${number2}`);
-  const correctAnswer = calculate(number1, number2, operator);
-  return [question, correctAnswer.toString()];
+  const correctAnswer = calculate(number1, number2, operator).toString();
+  return [question, correctAnswer];
 };
 
 export default () => {
