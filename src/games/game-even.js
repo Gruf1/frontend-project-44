@@ -6,16 +6,11 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 const minRange = 0;
 const maxRange = 100;
 
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+const isEven = (number) => (number % 2 === 0);
 
 const generateRound = () => {
-  const randomNumber = getRandomNumber(minRange, maxRange);
-  const question = randomNumber;
+  const number = getRandomNumber(minRange, maxRange);
+  const question = number.toString();
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
