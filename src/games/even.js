@@ -2,25 +2,16 @@
 import { getRandomNumber } from '../utils.js';
 import run from '../index.js';
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const minRange = 0;
 const maxRange = 100;
 
-const isPrime = (number) => {
-  const limit = Math.sqrt(number);
-  if (number <= 1);
-  for (let i = 2; i <= limit; i += 1) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
-  return true;
-};
+const isEven = (number) => (number % 2 === 0);
 
 const generateRound = () => {
   const number = getRandomNumber(minRange, maxRange);
   const question = number.toString();
-  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  const correctAnswer = isEven(number) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
